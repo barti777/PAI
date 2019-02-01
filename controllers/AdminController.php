@@ -17,14 +17,14 @@ class AdminController extends AppController
         $this->render('index', ['user' => $user->getUser($_SESSION['id'])]);
     }
 
-    public function users(): void
+    public function users()
     {
         $user = new UserMapper();
 
         header('Content-type: application/json');
         http_response_code(200);
 
-        echo $user->getUsers() ? json_encode($user->getUsers()) : '';
+        echo $user->getUsers() ? json_encode($user->getUsers()) : 'Coś poszło nie tak';
     }
 
     public function userDelete(): void

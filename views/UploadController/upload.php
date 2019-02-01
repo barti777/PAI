@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<?php include(dirname(__DIR__).'/head.html') ?>
+<?php include(dirname(__DIR__).'/head.php') ?>
 
 <body>
 
@@ -15,6 +15,8 @@
     <input type="file" name="file"/><br/>
     <input type="submit" value="send"/>
 </form>
+
+<a href="?page=index">Strona główna</a>
 
 </body>
 </html>

@@ -2,19 +2,23 @@
 
 class User
 {
-    private $id;
+    public $id;
     private $name;
     private $surname;
     private $email;
     private $password;
-    private $role = "ROLE_USER";
+    private $role;
 
-    public function __construct($name, $surname, $email, $password)
+    public function __construct($name, $surname, $email, $password, $role, $id = null)
     {
         $this->name = $name;
         $this->surname = $surname;
         $this->email = $email;
         $this->password = $password;
+        $this->role = $role;
+        if($id != null) {
+            $this->id = $id;
+        }
     }
 
     public function getName()

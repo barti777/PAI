@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-<?php include(dirname(__DIR__).'/head.html'); ?>
+<?php include(dirname(__DIR__).'/head.php'); ?>
 
 <body>
-<?php include(dirname(__DIR__).'/navbar.html'); ?>
+
+
+<?php include(dirname(__DIR__).'/navbar.php');?>
 
 <div class="container">
     <div class="row">
@@ -12,22 +14,6 @@
         <p>
             <?= $text ?>
         </p>
-
-
-        <?php
-        if(isset($_SESSION) && !empty($_SESSION)) {
-            print_r($_SESSION);
-        }
-        ?>
-
-        <div class="position">
-            <div id="turquise" class="static">Static</div>
-            <div id="blue" class="static">Static</div>
-            <div id="violet" class="relative">Relative</div>
-
-            <div id="red" class="fixed">Fixed</div>
-            <div id="yellow">Default</div>
-        </div>
     </div>
 </div>
 

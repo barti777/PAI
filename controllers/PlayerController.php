@@ -21,11 +21,11 @@ class PlayerController extends AppController
         }
         return $files;
     }
+
     private function getVideos(): array
     {
         $files = scandir(dirname(__DIR__) . self::UPLOAD_DIRECTORY, SCANDIR_SORT_NONE);
 
         return $this->getNotHidden($files);
     }
-
 }

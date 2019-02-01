@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<?php include(dirname(__DIR__).'/head.html'); ?>
+<?php include(dirname(__DIR__).'/head.php'); ?>
 
 <body>
 <div class="container">
@@ -19,7 +19,7 @@
                 <th>Action</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="users">
             <tr>
                 <td><?= $user->getName(); ?></td>
                 <td><?= $user->getSurname(); ?></td>
@@ -28,13 +28,62 @@
                 <td>-</td>
             </tr>
             </tbody>
-            <tbody class="users-list">
-            </tbody>
         </table>
 
         <button class="btn btn-dark btn-lg" type="button" onclick="getUsers()">Get all users</button>
     </div>
 </div>
+
+<script>
+
+
+function getUsers() {
+    const apiUrl = "http://localhost/ADRIANWII-PAI";
+    $.ajax({
+        type: 'POST',
+        url : apiUrl + '/?page=admin_users',
+        dataType : 'json',
+        success: function(data) {
+            $('.users tr:not(:first)').remove();
+            data.forEach(el => {
+                $('.users').append(`<tr>
+                    <td>${el.name}</td>
+                    <td>${el.surname}</td>
+                    <td>${el.email}</td>
+                    <td>${el.role}</td>
+                    <td>
+                    <button class="btn btn-danger" type="button" onclick="deleteUser(${el.id})">
+                        <i class="material-icons">delete_forever</i>
+                    </button>
+                    </td>
+                    </tr>`);
+            })
+        }
+    })
+}
+
+function deleteUser(id) {
+    if (!confirm('Do you want to delete this user?')) {
+        return;
+    }
+
+    const apiUrl = "http://localhost/ADRIANWII-PAI";
+
+    $.ajax({
+        url : apiUrl + '/?page=admin_delete_user',
+        method : "POST",
+        data : {
+            id : id
+        },
+        success: function() {
+            setTimeout(function() {
+                getUsers();
+            }, 500);
+        }
+    });
+}
+
+</script>
 
 </body>
 </html>

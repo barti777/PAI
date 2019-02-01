@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<?php include(dirname(__DIR__).'/head.html') ?>
+<?php include(dirname(__DIR__).'/head.php') ?>
 
 <body>
 
 <div class="container">
     <div clas="row">
         <div class="col-sm-6 offset-sm-3">
-            <h1 class="panel-header">LOGIN</h1>
+            <h1 class="panel-header">SIGN IN</h1>
             <hr>
             <?php if(isset($message)): ?>
                 <?php foreach($message as $item): ?>

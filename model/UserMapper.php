@@ -21,7 +21,7 @@ class UserMapper
             $stmt->execute();
 
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            return new User($user['name'], $user['surname'], $user['email'], $user['password']);
+            return new User($user['name'], $user['surname'], $user['email'], $user['password'], $user['role'], $user['id']);
         }
         catch(PDOException $e) {
             return 'Error: ' . $e->getMessage();
