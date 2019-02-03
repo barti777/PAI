@@ -2,9 +2,6 @@
 
 class UploadController extends AppController
 {
-    const MAX_FILE_SIZE = 1024*1024;
-    const SUPPORTED_TYPES = ['video/mp4', 'video/mov'];
-
     private $message = [];
 
     public function __construct()
@@ -29,15 +26,6 @@ class UploadController extends AppController
 
     private function validate(array $file): bool
     {
-        if ($file['size'] > self::MAX_FILE_SIZE) {
-            $this->message[] = 'File is too large for destination file system.';
-            return false;
-        }
-
-        if (!isset($file['type']) || !in_array($file['type'], self::SUPPORTED_TYPES)) {
-            $this->message[] = 'File type is not supported.';
-            return false;
-        }
 
         return true;
     }

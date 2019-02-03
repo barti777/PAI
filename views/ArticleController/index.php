@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="col-12 pl-0">Notatki</h1>
+        <h1 class="col-12">Notatki</h1>
         <a class="btn-style green margin-tit" href="http://localhost/ADRIANWII-PAI?page=news_add">Dodaj notatkę</a>
         <div class="news-container">
 

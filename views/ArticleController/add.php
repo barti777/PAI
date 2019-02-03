@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="col-12 pl-0">Nowa notatka</h1>
+        <h1 class="col-12">Nowa notatka</h1>
 
         <form class="form-margin" action="http://localhost/ADRIANWII-PAI/?page=news_save" method="post">
             <input type="hidden" name="id" value="">

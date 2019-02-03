@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8" />
-    <title>PAI - Laboratory 3</title>
+    <title>Aplikacja do zatwierdzania nieobecności</title>
     <link rel="stylesheet" href="public/css/styles.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
     <!-- icons set: https://material.io/tools/icons -->

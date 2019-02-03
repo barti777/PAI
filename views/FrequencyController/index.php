@@ -9,14 +9,16 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="col-12 pl-0">Obecność</h1>
-
-        <div class="col-12">    
-            <a class="btn-style green " href="http://localhost/ADRIANWII-PAI?page=frequency_add">Dodaj osobę</a>
+       <div>
+        <h1 class="col-12">Obecność</h1>
         </div>
+        <div class="col-12">    
+            <a class="btn-style green margin-tit" href="http://localhost/ADRIANWII-PAI?page=frequency_add">Dodaj osobę</a>
+        </div>
+        <div class="col-12"> 
         <div class="frequency-wrapper">
                    
-            <table>
+            <table class="table table-responsive">
                 <thead>
                     <tr class="line-head">
                         <th>Data</th>
@@ -30,6 +32,7 @@
                 </tbody>
             </table>
             
+        </div>
         </div>
     </div>
 </div>

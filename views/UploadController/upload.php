@@ -5,18 +5,27 @@
 
 <body>
 
-<h1>UPLOAD</h1>
+<?php include(dirname(__DIR__).'/navbar.php'); ?>
 
-<?php foreach($message as $item): ?>
-<div><?= $item ?></div>
-<?php endforeach; ?>
-
-<form action="?page=upload" method="POST" ENCTYPE="multipart/form-data">
-    <input type="file" name="file"/><br/>
-    <input type="submit" value="send"/>
-</form>
-
-<a href="?page=index">Strona główna</a>
-
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Załaduj pliki</h1>
+        </div>
+        <div class="col-12">
+            <?php foreach($message as $item): ?>
+                <div><?= $item ?></div>
+            <?php endforeach; ?>
+        </div>
+        <div class="col-12">
+            <form action="?page=upload" method="POST" ENCTYPE="multipart/form-data">
+                <input type="file" name="file" />
+                <br/>
+                <input class="btn-style orange margin-tit" type="submit" value="send"/>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+

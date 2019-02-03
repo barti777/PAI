@@ -28,7 +28,7 @@ class ArticleController extends AppController
 
         $mapper->saveArticle($_POST['title'], $_POST['content'], $_POST['authorId']);
 
-        $this->render('index', []);
+        header('Location: ?page=news');
     }
 
     public function articles()

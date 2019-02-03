@@ -1,5 +1,5 @@
 body {
-    font-family: Verdana;
+    font-family: Verdana, serif;
     font-size: 10pt;
     margin-top: 100px !important;
 }
@@ -199,3 +199,7 @@ textarea { vertical-align: top; }
 .btn-area {
    margin-top: 50px; 
 }
+
+
+.table td, .table th {
+    border-top: none !important; }

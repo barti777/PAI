@@ -4,49 +4,57 @@
 <?php include(dirname(__DIR__).'/head.php'); ?>
 
 <body>
+
+<?php include(dirname(__DIR__).'/navbar.php'); ?>
+
+
 <div class="container">
     <div class="row">
-        <h1 class="col-12 pl-0">ADMIN PANEL</h1>
+        <div class="col-12">
+            <h1>Panel administracyjny</h1>
+        </div>
 
-        <h4 class="mt-4">Your data:</h4>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody class="users">
-            <tr>
-                <td><?= $user->getName(); ?></td>
-                <td><?= $user->getSurname(); ?></td>
-                <td><?= $user->getEmail(); ?></td>
-                <td><?= $user->getRole(); ?></td>
-                <td>-</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="col-12">
+            <h4 class="mt-4">Dane</h4>
+            <table class="table table-hover table-responsive">
+                <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Email</th>
+                    <th>Rola</th>
+                    <th>Akcja</th>
+                </tr>
+                </thead>
+                <tbody class="users">
+                <tr>
+                    <td><?= $user->getName(); ?></td>
+                    <td><?= $user->getSurname(); ?></td>
+                    <td><?= $user->getEmail(); ?></td>
+                    <td><?= $user->getRole(); ?></td>
+                    <td>-</td>
+                </tr>
+                </tbody>
+            </table>
 
-        <button class="btn btn-dark btn-lg" type="button" onclick="getUsers()">Get all users</button>
+            <button class="btn-style orange margin-tit" type="button" onclick="getUsers()">Get all users</button>
+        </div>
     </div>
 </div>
 
 <script>
 
 
-function getUsers() {
-    const apiUrl = "http://localhost/ADRIANWII-PAI";
-    $.ajax({
-        type: 'POST',
-        url : apiUrl + '/?page=admin_users',
-        dataType : 'json',
-        success: function(data) {
-            $('.users tr:not(:first)').remove();
-            data.forEach(el => {
-                $('.users').append(`<tr>
+    function getUsers() {
+        const apiUrl = "http://localhost/ADRIANWII-PAI";
+        $.ajax({
+            type: 'POST',
+            url : apiUrl + '/?page=admin_users',
+            dataType : 'json',
+            success: function(data) {
+                $('.users tr:not(:first)').remove();
+                data.forEach(el => {
+                    $('.users').append(`<tr>
                     <td>${el.name}</td>
                     <td>${el.surname}</td>
                     <td>${el.email}</td>
@@ -57,31 +65,31 @@ function getUsers() {
                     </button>
                     </td>
                     </tr>`);
-            })
-        }
-    })
-}
-
-function deleteUser(id) {
-    if (!confirm('Do you want to delete this user?')) {
-        return;
+                })
+            }
+        })
     }
 
-    const apiUrl = "http://localhost/ADRIANWII-PAI";
-
-    $.ajax({
-        url : apiUrl + '/?page=admin_delete_user',
-        method : "POST",
-        data : {
-            id : id
-        },
-        success: function() {
-            setTimeout(function() {
-                getUsers();
-            }, 500);
+    function deleteUser(id) {
+        if (!confirm('Do you want to delete this user?')) {
+            return;
         }
-    });
-}
+
+        const apiUrl = "http://localhost/ADRIANWII-PAI";
+
+        $.ajax({
+            url : apiUrl + '/?page=admin_delete_user',
+            method : "POST",
+            data : {
+                id : id
+            },
+            success: function() {
+                setTimeout(function() {
+                    getUsers();
+                }, 500);
+            }
+        });
+    }
 
 </script>
 

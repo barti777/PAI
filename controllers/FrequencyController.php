@@ -34,7 +34,8 @@ class FrequencyController extends AppController
 
         $mapper->saveFrequency($_POST['name'], $_POST['surname'], $_POST['frequency'], $_POST['date']);
 
-        $this->render('index', []);
+        //$this->render('index', []);
+        header('Location: ?page=frequency');
     }
 
     public function frequences()
