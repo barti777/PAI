@@ -7,6 +7,8 @@ require_once 'controllers/AdminController.php';
 require_once 'controllers/ArticleController.php';
 require_once 'controllers/FrequencyController.php';
 require_once 'controllers/PersonalDataController.php';
+require_once 'controllers/AppController.php';
+
 
 class Routing
 {
