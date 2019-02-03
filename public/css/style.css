@@ -11,7 +11,11 @@ h1 {
 body {
     height:800px;
     width: 100%;
+<<<<<<< HEAD
     /*padding-left:40px;*/
+=======
+    padding-left:40px;
+>>>>>>> dc225b1334839dc502b5c859d12ffee38296ce6f
     background-color: white;
 }
 
@@ -91,6 +95,7 @@ li a:hover {
 
 .active {
     background-color: #4CAF50;
+<<<<<<< HEAD
 }
 
 input[type="file"]::-webkit-file-upload-button {
@@ -114,3 +119,6 @@ input[type="file"]::-ms-browse {
     }
 }
 
+=======
+}
+>>>>>>> dc225b1334839dc502b5c859d12ffee38296ce6f
