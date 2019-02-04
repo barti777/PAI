@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
        <div>
-        <h1 class="col-12">Obecność</h1>
+        <h1 class="col-12 dom">Obecność</h1>
         </div>
         <div class="col-12">    
             <a class="btn-style green margin-tit" href="http://localhost/ADRIANWII-PAI?page=frequency_add">Dodaj osobę</a>
@@ -38,6 +38,8 @@
 </div>
 
 <script>
+
+
 
 getFrequences();
 function getFrequences() {

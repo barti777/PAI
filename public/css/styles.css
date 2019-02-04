@@ -39,7 +39,6 @@ a:hover {
 body {
     height:800px;
     width: 100%;
-    padding-left:40px;
     background-color: white;
 }
 
@@ -171,7 +170,7 @@ input[type="checkbox"] {
   -webkit-transform: scale(2); /* Safari and Chrome */
   -o-transform: scale(2); /* Opera */
   padding: 10px;
-  margin: : 10px;
+  margin: 10px;
 }
 
 .float-right {
@@ -203,3 +202,9 @@ textarea { vertical-align: top; }
 
 .table td, .table th {
     border-top: none !important; }
+
+@media (max-width: 430px) {
+    li a {
+        padding: 14px 10px !important;
+    }
+}
